@@ -11,7 +11,6 @@ import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,7 +24,7 @@ public class TableViewFragment extends Fragment {
 
     ListView listView;
 
-    List<Map<String, String>> historyList = new ArrayList<>();
+    ArrayList<Map<String, String>> historyList = new ArrayList<>();
 
     public void addHistory(String entry, String timeStamp) {
         Map<String, String> datum = new HashMap<>(2);
@@ -51,6 +50,11 @@ public class TableViewFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        if (savedInstanceState != null) {
+            historyList = (ArrayList<Map<String, String>>) savedInstanceState.getSerializable("historyList");
+        }
+
         View view = inflater.inflate(R.layout.table_view_fragment, container, false);
         listView = (ListView) view.findViewById(R.id.historyListView);
         adapter = new SimpleAdapter(
@@ -61,6 +65,16 @@ public class TableViewFragment extends Fragment {
                 new int[] { android.R.id.text1, android.R.id.text2});
         listView.setAdapter(adapter);
 
+
+
         return view;
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable("historyList", historyList);
+    }
+
+
 }

@@ -111,6 +111,28 @@ public class MainActivity extends AppCompatActivity {
         tableViewFragment = (TableViewFragment) getSupportFragmentManager().findFragmentById(R.id.tableViewFragment);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("outputLabel", outputLabel.getText().toString());
+        outState.putInt("currentNumberOfDice", currentNumberOfDice);
+        outState.putSerializable("currentTypeOfDice", currentTypeOfDice);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        outputLabel.setText(savedInstanceState.getString("outputLabel"));
+        currentNumberOfDice = savedInstanceState.getInt("currentNumberOfDice");
+        currentTypeOfDice = (DiceType) savedInstanceState.getSerializable("currentTypeOfDice");
+        if (currentNumberOfDice != 1) {
+            rollButton.setText("Roll ×"+currentNumberOfDice);
+        } else {
+            rollButton.setText("Roll");
+        }
+    }
+
     //
     //Mark: Private Convenience
     //
