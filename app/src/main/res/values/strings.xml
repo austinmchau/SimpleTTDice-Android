@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SimpleTTDice</string>
+    <string name="app_name" translatable="false">SimpleTTDice</string>
     <string name="dice_type_prompt">Choose a dice</string>
 
 
@@ -22,5 +22,7 @@
     <string name="d100">d100</string>
     <string name="output_label_default">Roll…</string>
     <string name="roll_button_text">Roll</string>
+    <string name="rollButtonRight" translatable="false">+</string>
+    <string name="rollButtonLeft" translatable="false">-</string>
 
 </resources>

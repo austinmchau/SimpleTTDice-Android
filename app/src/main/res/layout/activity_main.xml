@@ -31,11 +31,11 @@
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="&lt;"
+            android:text="@string/rollButtonLeft"
             android:id="@+id/rollButtonLeft" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="50dp"
             android:text="@string/roll_button_text"
             android:id="@+id/rollButton"
@@ -44,7 +44,7 @@
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text=">"
+            android:text="@string/rollButtonRight"
             android:id="@+id/rollButtonRight" />
 
         <Spinner

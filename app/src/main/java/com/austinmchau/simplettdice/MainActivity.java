@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
 
         outputLabel = (TextView) findViewById(R.id.outputLabel);
         typeOfDiceSpinner = (Spinner) findViewById(R.id.typeOfDiceSpinner);
+        //set the default according to value
+        typeOfDiceSpinner.setSelection(2); //2 = D6
+
         currentTypeOfDice = DiceType.valueOf(typeOfDiceSpinner.getSelectedItem().toString());
 
         //Spinner Setup

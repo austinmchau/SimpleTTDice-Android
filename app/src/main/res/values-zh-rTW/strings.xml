@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">SimpleTTDice</string>
     <string name="dice_type_prompt">選擇骰種</string>
 
     <string-array name="dice_type_array">
