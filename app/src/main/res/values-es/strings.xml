@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SimpleTTDice</string>
+    <string name="output_label_default">Tirar los Dados</string>
+    <string name="roll_button_text">Tirar</string>
+    <string name="dice_type_prompt">Elija un tipo dado</string>
+</resources>

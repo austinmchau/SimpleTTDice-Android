@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SimpleTTDice</string>
+    <string name="dice_type_prompt">选择骰子</string>
+
+    <string-array name="dice_type_array">
+        <item>20面骰</item>
+        <item>10面骰</item>
+        <item>6面骰</item>
+        <item>12面骰</item>
+        <item>4面骰</item>
+        <item>8面骰</item>
+        <item>100面骰</item>
+    </string-array>
+    <string name="d10">10面骰</string>
+    <string name="d100">100面骰</string>
+    <string name="d12">12面骰</string>
+    <string name="d20">20面骰</string>
+    <string name="d4">4面骰</string>
+    <string name="d6">6面骰</string>
+    <string name="d8">8面骰</string>
+    <string name="output_label_default">请摇骰子</string>
+    <string name="roll_button_text">摇骰</string>
+
+</resources>

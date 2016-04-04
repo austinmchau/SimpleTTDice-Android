@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     private String getHistoryOutput() {
         ACSTTDiceRoller.DiceSet roll = diceRoller.diceRollHistory().get(diceRoller.diceRollHistory().size() - 1);
 
-        String diceType = roll.numberOfDiceOnHand() + currentTypeOfDice.toString().toLowerCase();
+        String diceType = roll.numberOfDiceOnHand() + currentTypeOfDice.toString().toLowerCase(); //localize?
 
         String rollNumber = "";
         if (roll.diceResults().size() <= 6) {
@@ -163,5 +163,9 @@ public class MainActivity extends AppCompatActivity {
         //return "0";
     }
 
+    private String diceTypeToString(DiceType diceType) {
+        int id = getResources().getIdentifier(currentTypeOfDice.toString().toLowerCase(), "string", "com.austinmchau.simplettdice");
+        return getResources().getString(id);
+    }
 
 }
