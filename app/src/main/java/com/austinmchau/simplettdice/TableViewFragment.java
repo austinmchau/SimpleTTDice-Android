@@ -23,6 +23,7 @@ public class TableViewFragment extends Fragment {
     //
 
     ListView listView;
+    SimpleAdapter adapter;
 
     ArrayList<Map<String, String>> historyList = new ArrayList<>();
 
@@ -34,14 +35,14 @@ public class TableViewFragment extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
-    SimpleAdapter adapter;
-
-
     //
-    //Mark: Internal Methods
+    //Mark: External Methods
     //
 
-
+    public void resetHistory() {
+        historyList.clear();
+        adapter.notifyDataSetChanged();
+    }
 
     //
     //Mark: Fragment Life Cycle

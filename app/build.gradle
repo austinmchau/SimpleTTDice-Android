@@ -7,13 +7,16 @@ android {
         applicationId "com.austinmchau.simplettdice"
         minSdkVersion 8
         targetSdkVersion 23
-        versionCode 4
-        versionName '1.0.2'
+        versionCode 6
+        versionName '1.1.1'
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
         }
     }
     productFlavors {

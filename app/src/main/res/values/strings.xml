@@ -24,5 +24,6 @@
     <string name="roll_button_text">Roll</string>
     <string name="rollButtonRight" translatable="false">+</string>
     <string name="rollButtonLeft" translatable="false">-</string>
+    <string name="reset_rolls">Reset Rolls</string>
 
 </resources>

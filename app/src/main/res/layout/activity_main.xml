@@ -48,7 +48,7 @@
             android:id="@+id/rollButtonRight" />
 
         <Spinner
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="50dp"
             android:id="@+id/typeOfDiceSpinner"
             android:entries="@array/dice_type_array"
@@ -70,3 +70,4 @@
         android:layout_above="@+id/linearLayout" />
 
 </RelativeLayout>
+

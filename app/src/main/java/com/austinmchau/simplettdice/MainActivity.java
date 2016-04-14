@@ -3,6 +3,9 @@ package com.austinmchau.simplettdice;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -94,13 +97,13 @@ public class MainActivity extends AppCompatActivity {
         //set the default according to value
         typeOfDiceSpinner.setSelection(2); //2 = D6
 
-        currentTypeOfDice = DiceType.valueOf(typeOfDiceSpinner.getSelectedItem().toString());
+        currentTypeOfDice = DiceType.values()[typeOfDiceSpinner.getSelectedItemPosition()];
 
         //Spinner Setup
         typeOfDiceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                currentTypeOfDice = DiceType.valueOf(parent.getItemAtPosition(position).toString());
+                currentTypeOfDice = DiceType.values()[parent.getSelectedItemPosition()];
             }
 
             @Override
@@ -112,6 +115,30 @@ public class MainActivity extends AppCompatActivity {
         addListenerOnButtons();
 
         tableViewFragment = (TableViewFragment) getSupportFragmentManager().findFragmentById(R.id.tableViewFragment);
+    }
+
+    //
+    //Mark: Option Menu
+    //
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_option_reset_rolls:
+                outputLabel.setText(R.string.output_label_default);
+                diceRoller.reset();
+                tableViewFragment.resetHistory();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

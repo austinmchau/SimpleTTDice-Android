@@ -19,5 +19,6 @@
     <string name="d8">8面骰</string>
     <string name="output_label_default">请摇骰子</string>
     <string name="roll_button_text">摇骰</string>
+    <string name="reset_rolls">重设骰子</string>
 
 </resources>
